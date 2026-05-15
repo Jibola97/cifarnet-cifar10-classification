@@ -70,6 +70,31 @@ Weighted output = a1C1(x) + a2C2(x) + ... + aLCL(x)
 Best test accuracy: 95.04%
 Best epoch: 194
 
+Per-class accuracy:
+
+Class	Accuracy
+airplane	96.0%
+automobile	97.6%
+bird	92.9%
+cat	89.3%
+deer	96.4%
+dog	91.5%
+frog	97.4%
+horse	96.6%
+ship	96.3%
+truck	96.5%
+
+The weakest classes were cat and dog, which is expected because they are visually similar at CIFAR-10’s 32×32 resolution. The largest confusion-matrix errors were between these two classes.
+
+## Key Findings
+
+The main findings from the experiment were:
+
+The custom intermediate-block mechanism can achieve strong CIFAR-10 performance when combined with modern optimisation techniques.
+BatchNorm, residual connections and a warmup/cosine learning-rate schedule were important for stable training.
+Data augmentation and label smoothing helped reduce overfitting.
+The final model reached over 95% test accuracy while preserving the required custom block structure.
+
 
 
 
